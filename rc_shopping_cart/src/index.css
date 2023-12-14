@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0f172a;
+  border-radius: 6px;
+}
+
+body {
+  background-color: #101010;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.container-spacing {
+  width: 70%;
+  height: 100%;
+  margin: auto;
+}
+
+.product-page-grid {
+  display: grid;
+  grid-template-areas:
+    "title title price"
+    "image image aside";
+  grid-template-columns: 1fr 1fr 300px;
+  grid-template-rows: 200px 1fr;
+}
+
+.cart-page-grid {
+  display: grid;
+  grid-template-areas:
+    "product product aside"
+    "product product aside";
+  grid-template-columns: 1fr 1fr 400px;
+  grid-template-rows: 1fr 1fr;
+}
+
+.card-data-grid {
+  display: grid;
+  grid-template-areas:
+    "card card form"
+    "card card form"
+    "card card form";
+  grid-template-columns: 1fr 1fr 400px;
+  grid-template-rows: auto auto auto;
+}
+
+.loader {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  position: relative;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
